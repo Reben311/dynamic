@@ -1,0 +1,65 @@
+/* Custom Styles for Raffle Page */
+
+.timer-box {
+    @apply flex flex-col p-4 bg-black/20 rounded-xl w-24;
+}
+
+.timer-value {
+    @apply text-4xl md:text-6xl font-extrabold tracking-tighter text-white;
+    font-variant-numeric: tabular-nums;
+    text-shadow: 0 0 10px rgba(93, 173, 226, 0.4);
+}
+
+.timer-label {
+    @apply text-sm md:text-base text-zinc-400 uppercase tracking-widest mt-1;
+}
+
+.timer-separator {
+    @apply text-4xl md:text-6xl font-extrabold text-zinc-600;
+}
+
+#past-winners-list {
+    max-height: 16rem; 
+    overflow-y: auto;
+    padding-right: 0.5rem; 
+}
+
+#past-winners-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+#past-winners-list::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+#past-winners-list::-webkit-scrollbar-thumb {
+    background: rgba(93, 173, 226, 0.4);
+    border-radius: 10px;
+}
+
+#past-winners-list::-webkit-scrollbar-thumb:hover {
+    background: rgba(93, 173, 226, 0.7);
+}
+
+/* Add this at the end of your style.css file */
+
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0; /* Ensures it's in the background */
+}
+
+/* Make sure content sections are layered on top of the particles */
+main section {
+    position: relative;
+    z-index: 2;
+}
+
+/* The hero section video needs to be explicitly layered above the particles */
+#hero {
+    z-index: 1; /* Sits above particles but below main content */
+}
